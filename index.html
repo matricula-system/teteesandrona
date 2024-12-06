@@ -15,18 +15,27 @@
             padding: 0;
             height: 100vh;
             overflow: hidden;
+            position: relative;
         }
 
         /* Estilo do texto */
         h1 {
             font-size: 50px;
             margin-top: 20%;
+            animation: piscarTexto 1.5s infinite; /* Texto piscando */
+        }
+
+        /* Animação para o texto piscar */
+        @keyframes piscarTexto {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
         }
 
         /* Animação para os corações subindo e descendo */
         @keyframes subirDescer {
             0% { transform: translateY(0); }
-            50% { transform: translateY(-200px); }
+            50% { transform: translateY(-150px); }
             100% { transform: translateY(0); }
         }
 
@@ -34,4 +43,34 @@
         @keyframes piscando {
             0% { opacity: 0; }
             50% { opacity: 1; }
-            100% { opacity: 0; 
+            100% { opacity: 0; }
+        }
+
+        /* Estilo dos corações */
+        .coracao {
+            font-size: 50px;
+            position: absolute;
+            animation: subirDescer 3s infinite, piscando 1.5s infinite;
+            opacity: 0;
+        }
+
+        /* Posições dos corações */
+        .coracao1 { left: 10%; animation-delay: 0s; }
+        .coracao2 { left: 20%; animation-delay: 0.5s; }
+        .coracao3 { left: 30%; animation-delay: 1s; }
+        .coracao4 { left: 40%; animation-delay: 1.5s; }
+        .coracao5 { left: 50%; animation-delay: 2s; }
+        .coracao6 { left: 60%; animation-delay: 2.5s; }
+
+        /* Texto repetido "TETÊ E SANDRONA" */
+        .repetir-texto {
+            position: absolute;
+            top: 80%;
+            width: 100%;
+            font-size: 30px;
+            color: white;
+            animation: repetirTexto 5s linear infinite;
+        }
+
+        @keyframes repetirTexto {
+            0% { left: 100%; }
